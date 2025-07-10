@@ -26,14 +26,30 @@
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
               display: ['Playfair Display', 'serif'],
+              cursive: ['Dancing Script', 'cursive'],
             },
             animation: {
               'subtle-glow': 'subtle-glow 2.5s infinite ease-in-out',
+              'marquee': 'marquee 30s linear infinite',
+              'shine': 'shine 2.5s linear infinite',
+              'fade-in-out': 'fade-in-out 2.5s ease-in-out forwards',
             },
             keyframes: {
               'subtle-glow': {
                 '0%, 100%': { boxShadow: '0 0 15px 0px var(--glow-color)' },
                 '50%': { boxShadow: '0 0 25px 5px var(--glow-color)' },
+              },
+              marquee: {
+                '0%': { transform: 'translateX(0%)' },
+                '100%': { transform: 'translateX(-100%)' },
+              },
+              'shine': {
+                'to': { backgroundPosition: '200% center' },
+              },
+              'fade-in-out': {
+                '0%': { opacity: '0', transform: 'translate(-50%, 10px)' },
+                '20%, 80%': { opacity: '1', transform: 'translate(-50%, 0)' },
+                '100%': { opacity: '0', transform: 'translate(-50%, -5px)' },
               }
             }
           },
@@ -42,7 +58,7 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
       /* Removed html { scroll-behavior: smooth; } to rely on JS for smooth scroll control */
       body {
@@ -91,12 +107,9 @@
   // })();
   // Using publicKey directly in send method is preferred to avoid global init issues here.
 </script>
-<link rel="stylesheet" href="/index.css">
 </head>
   <body class="bg-secondary-light dark:bg-slate-900 transition-colors duration-300">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
-
-    
   </body>
 </html>

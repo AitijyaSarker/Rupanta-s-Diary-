@@ -133,4 +133,37 @@ export const SAMPLE_CONTENT_ITEMS: ContentItem[] = [
     category: 'UGC', 
     videoUrl: 'https://www.instagram.com/reel/DFDm0RqzLpL/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==' // HAS VIDEO
   },
+   { 
+    id: 'ugc5', 
+    title: 'UGC Example: Gadget Review - Whatook', 
+    description: 'Hot Day? Cool Down with Whatook! ❄️☀️', 
+    imageUrl: 'https://i.postimg.cc/Y9KyyFXn/511472108-18041239193642271-6947474563786138560-n.jpg', 
+    category: 'UGC',
+    videoUrl: 'https://www.instagram.com/reel/DLWLBY7TArX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='
+  },
+   { 
+    id: 'ugc6', 
+    title: 'UGC Example: Website Review - Studypool', 
+    description: 'Earn from Your Study Notes! ✨📖', 
+    imageUrl: 'https://i.postimg.cc/t40ztbYy/505732139-18039616028642271-7153581206331576445-n-1.jpg', 
+    category: 'UGC',
+    videoUrl: 'https://www.instagram.com/reel/DKwsbW0z3BV/?utm_source=ig_web_copy_link'
+  },
+   { 
+    id: 'ugc7', 
+    title: 'UGC Example: Aesthetic Ceramic Unboxing', 
+    description: 'Unboxing Aesthetic Ceramic Joy ✨ | HandmadeOddly x Rupanta’s Diary', 
+    imageUrl: 'https://i.postimg.cc/fyXmLHYZ/Screenshot-2025-07-10-001734.png', 
+    category: 'UGC', 
+    videoUrl: 'https://www.instagram.com/reel/DLeWDodzZaf/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='
+  },
+ { 
+    id: 'ugc8', 
+    title: 'UGC Example: Being a girl you will love this', 
+    description: 'Unboxing Aesthetic Girly Things✨ | Fineshop.bd x Rupanta’s Diary', 
+    imageUrl: 'https://i.postimg.cc/26XN6GrH/515008945-18041624402642271-502068001823265562-n.jpg', 
+    category: 'UGC',
+    videoUrl: 'https://www.instagram.com/reel/DLfZBHDT3gU/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='
+  },
+
 ];
