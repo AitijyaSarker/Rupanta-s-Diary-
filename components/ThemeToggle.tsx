@@ -1,30 +1,39 @@
+import React, { createContext, useState, useEffect } from "react";
+import { Theme } from "../types";
 
-import React, { useContext } from 'react';
-import { ThemeContext } from '../App';
-import { Theme } from '../types';
-import { SunIcon, MoonIcon } from './icons/ThemeIcons';
+export const ThemeContext = createContext<{
+  theme: Theme;
+  toggleTheme: () => void;
+} | null>(null);
 
-const ThemeToggle: React.FC = () => {
-  const context = useContext(ThemeContext);
+const App: React.FC = () => {
+  const [theme, setTheme] = useState<Theme>(Theme.LIGHT); // ✅ Default LIGHT
 
-  if (!context) {
-    return null; // Or some fallback UI
-  }
-  const { theme, toggleTheme } = context;
+  const toggleTheme = () => {
+    setTheme((prev) =>
+      prev === Theme.LIGHT ? Theme.DARK : Theme.LIGHT
+    );
+  };
+
+  // (Optional) If you’re storing theme in localStorage for persistence:
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme") as Theme | null;
+    if (storedTheme) {
+      setTheme(storedTheme);
+    }
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.classList.remove("light", "dark");
+    document.documentElement.classList.add(theme.toLowerCase());
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   return (
-    <button
-      onClick={toggleTheme}
-      className="p-2 rounded-full text-slate-600 dark:text-slate-300 hover:bg-pink-100 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-pink-500 transition-colors duration-200"
-      aria-label={theme === Theme.LIGHT ? 'Switch to dark mode' : 'Switch to light mode'}
-    >
-      {theme === Theme.LIGHT ? (
-        <MoonIcon className="h-5 w-5" />
-      ) : (
-        <SunIcon className="h-5 w-5" />
-      )}
-    </button>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {/* your app components */}
+    </ThemeContext.Provider>
   );
 };
 
-export default ThemeToggle;
+export default App;
