@@ -24,7 +24,7 @@ export const NAV_ITEMS: NavItem[] = [
 export const CONTENT_CATEGORIES = [
   { name: 'Lifestyle Vlogs', path: 'lifestyle', id: 'lifestyle' }, 
   { name: 'Study Content', path: 'study', id: 'study' },         
-  { name: 'UGC Portfolio', path: 'ugc', id: 'ugc' },             
+  { name: 'Collaborations', path: 'ugc', id: 'ugc' },             
 ];
 
 // Note on videoUrl: 
@@ -101,69 +101,99 @@ export const SAMPLE_CONTENT_ITEMS: ContentItem[] = [
   },
 
   // UGC Content (1 item with videoUrl)
-  { 
+ { 
     id: 'ugc1', 
-    title: 'UGC Example: Skincare Product Demo', 
-    description: 'Authentic user-generated content showcasing a new skincare line.', 
-    imageUrl: 'https://i.postimg.cc/4y1ZY1b8/Image-231.jpg', 
-    category: 'UGC', 
-    videoUrl: 'https://www.instagram.com/reel/DKi46QUz7Mp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==' // HAS VIDEO
+    title: 'Collab Example: Manifested Magic with Divoom 💫', 
+    description: 'Divoom Ditoo Pro — Retro pixel display, RGB keys, 15W audio, and smart features in one compact speaker.| Divoom x Rupanta’s Diary', 
+    imageUrl: 'https://i.postimg.cc/tCTBnwVK/Screenshot-2025-08-08-193307.png', 
+    category: 'UGC',
+    videoUrl: 'https://www.instagram.com/reel/DMfgxu0Tpir/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='
   },
-  { 
+   { 
     id: 'ugc2', 
-    title: 'UGC Example: Fashion Haul & Try-On', 
-    description: 'Engaging video featuring a fashion brand\'s latest collection.', 
-    imageUrl: 'https://i.postimg.cc/tCSQ8JrV/Image-746.jpg', 
+    title: 'Collab Example:✨ Desk Glow-Up with Indecor BD ✨', 
+    description: 'Use my code RUPANTA10 for 10% OFF your own pegboard! 🫶🏼', 
+    imageUrl: 'https://i.postimg.cc/VLQv28wW/Screenshot-2025-10-04-025751.png', 
     category: 'UGC', 
-    videoUrl: 'https://www.instagram.com/reel/DJwrMAiTzTy/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==' // HAS VIDEO
+    videoUrl: 'https://www.instagram.com/reel/DPWFbf7E8-u/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==' // HAS VIDEO
   },
-  { 
+    { 
     id: 'ugc3', 
-    title: 'UGC Example: Carry Easy', 
-    description: 'Lightweight, stylish, always ready,Your perfect everyday companion.', 
-    imageUrl: 'https://i.postimg.cc/wB79vJrz/Image-627.jpg', 
+    title: 'Collab Example: Dive in caffeine with BongBeanCoffee', 
+    description: 'The perfect brew to keep your mind sharp and heart cozy | BongBean x Rupanta’s Diary', 
+    imageUrl: 'https://i.postimg.cc/2jWDZLZc/Screenshot-2025-10-04-022232.png', 
     category: 'UGC', 
-    videoUrl: 'https://www.instagram.com/reel/DFQUAM5zmBY/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==' // HAS VIDEO
+    videoUrl: 'https://youtube.com/shorts/cSkxOxD7-AQ?si=wJwsjBUYRUJLoyV1'
   },
   { 
     id: 'ugc4', 
-    title: 'UGC Example: Make your Schedule', 
-    description: 'Demonstrating the features and benefits of a Schedule Book', 
-    imageUrl: 'https://i.postimg.cc/52B56YZX/Image-180.jpg', 
-    category: 'UGC', 
-    videoUrl: 'https://www.instagram.com/reel/DFDm0RqzLpL/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==' // HAS VIDEO
+    title: 'Collab Example: 👜 The Cutest Chubby Bag is Here! ✨', 
+    description: 'Carry your world in the cutest way possible | np_collection_bd x Rupanta’s Diary', 
+    imageUrl: 'https://i.postimg.cc/BZCGp9my/Screenshot-2025-10-04-023234.png', 
+    category: 'UGC',
+    videoUrl: 'https://www.instagram.com/reel/DNirOe4TGQw/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='
   },
-   { 
+
+  { 
     id: 'ugc5', 
-    title: 'UGC Example: Gadget Review - Whatook', 
+    title: 'Collab Example: ✨ Desk Glow-Up Alert! ✨', 
+    description: 'Meet the Divoom Timeframe – pixel art, 400+ clock faces & endless vibes in one frame!', 
+    imageUrl: 'https://i.postimg.cc/wBNHHtgL/Screenshot-2025-10-04-020944.png', 
+    category: 'UGC', 
+    videoUrl: 'https://www.instagram.com/reel/DOoGIZHkzNX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==' // HAS VIDEO
+  },
+  { 
+    id: 'ugc6', 
+    title: 'Collab Example:✨ Indulge in Self-Care Bliss ✨', 
+    description: 'Fresh, sweet, and oh-so-delicious 💕 Meet @aetheria.bd body care essentials – from Cherry Cherry 🍒 to Salted Caramel 🍯 and Lilac Lush 🌸', 
+    imageUrl: 'https://i.postimg.cc/441m90VN/Screenshot-2025-10-04-024154.png', 
+    category: 'UGC', 
+    videoUrl: 'https://www.instagram.com/reel/DNlGNUdTvQG/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==' // HAS VIDEO
+  },
+ 
+ 
+   { 
+    id: 'ugc7', 
+    title: 'Collab Example: Gadget Review - Whatook', 
     description: 'Hot Day? Cool Down with Whatook! ❄️☀️', 
     imageUrl: 'https://i.postimg.cc/Y9KyyFXn/511472108-18041239193642271-6947474563786138560-n.jpg', 
     category: 'UGC',
     videoUrl: 'https://www.instagram.com/reel/DLWLBY7TArX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='
   },
    { 
-    id: 'ugc6', 
-    title: 'UGC Example: Website Review - Studypool', 
+    id: 'ugc8', 
+    title: 'Collab Example: Website Review - Studypool', 
     description: 'Earn from Your Study Notes! ✨📖', 
     imageUrl: 'https://i.postimg.cc/t40ztbYy/505732139-18039616028642271-7153581206331576445-n-1.jpg', 
     category: 'UGC',
     videoUrl: 'https://www.instagram.com/reel/DKwsbW0z3BV/?utm_source=ig_web_copy_link'
   },
-   { 
-    id: 'ugc7', 
-    title: 'UGC Example: Aesthetic Ceramic Unboxing', 
-    description: 'Unboxing Aesthetic Ceramic Joy ✨ | HandmadeOddly x Rupanta’s Diary', 
-    imageUrl: 'https://i.postimg.cc/fyXmLHYZ/Screenshot-2025-07-10-001734.png', 
+ 
+ 
+  { 
+    id: 'ugc9', 
+    title: 'Collab Example: Skincare Product Demo', 
+    description: 'Authentic user-generated content showcasing a new skincare line.', 
+    imageUrl: 'https://i.postimg.cc/4y1ZY1b8/Image-231.jpg', 
     category: 'UGC', 
-    videoUrl: 'https://www.instagram.com/reel/DLeWDodzZaf/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='
-  },
- { 
-    id: 'ugc8', 
-    title: 'UGC Example: Being a girl you will love this', 
-    description: 'Unboxing Aesthetic Girly Things✨ | Fineshop.bd x Rupanta’s Diary', 
-    imageUrl: 'https://i.postimg.cc/26XN6GrH/515008945-18041624402642271-502068001823265562-n.jpg', 
-    category: 'UGC',
-    videoUrl: 'https://www.instagram.com/reel/DLfZBHDT3gU/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='
+    videoUrl: 'https://www.instagram.com/reel/DKi46QUz7Mp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==' // HAS VIDEO
   },
 
+  
+ { 
+    id: 'ugc10', 
+    title: 'Collab Example: Carry Easy', 
+    description: 'Lightweight, stylish, always ready,Your perfect everyday companion.', 
+    imageUrl: 'https://i.postimg.cc/wB79vJrz/Image-627.jpg', 
+    category: 'UGC', 
+    videoUrl: 'https://www.instagram.com/reel/DFQUAM5zmBY/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==' // HAS VIDEO
+  },
+  { 
+    id: 'ugc11', 
+    title: 'Collab Example: Make your Schedule', 
+    description: 'Demonstrating the features and benefits of a Schedule Book', 
+    imageUrl: 'https://i.postimg.cc/52B56YZX/Image-180.jpg', 
+    category: 'UGC', 
+    videoUrl: 'https://www.instagram.com/reel/DFDm0RqzLpL/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==' // HAS VIDEO
+  },
 ];

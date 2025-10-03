@@ -25,7 +25,7 @@ const UgcContent: React.FC = () => {
 
   return (
     <>
-      <ContentGrid items={ugcItems} categoryName="UGC Portfolio" onWatchVideo={handleWatchVideo} />
+      <ContentGrid items={ugcItems} categoryName="Collaborations" onWatchVideo={handleWatchVideo} />
       {currentVideoUrl && (
         <VideoModal
           videoUrl={currentVideoUrl}

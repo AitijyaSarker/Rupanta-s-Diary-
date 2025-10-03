@@ -32,9 +32,10 @@ const ContentCard: React.FC<ContentCardProps> = ({ item, onWatchVideo }) => {
         >
           <PlayCircleIcon className="w-16 h-16 text-white opacity-80 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-300" />
         </button>
-         <span className="absolute top-2 right-2 bg-primary text-white text-xs font-semibold px-2 py-1 rounded-full dark:bg-pink-500">
-          {item.category}
-        </span>
+       <span className="absolute top-2 right-2 bg-primary text-white text-xs font-semibold px-2 py-1 rounded-full dark:bg-pink-500">
+  {item.category === 'UGC' ? 'Collab' : item.category}
+</span>
+
       </div>
       <div className="p-5 flex-grow"> {/* Added flex-grow here */}
         <h3 className="text-lg font-semibold text-slate-800 dark:text-white mb-2 group-hover:text-primary dark:group-hover:text-pink-400 transition-colors">
