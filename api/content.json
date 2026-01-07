@@ -1,0 +1,117 @@
+{
+  "updatedAt": "2026-01-07T00:00:00.000Z",
+  "items": [
+    {
+      "id": "lv1",
+      "title": "A Day in My Life: University Edition",
+      "description": "Join me for a typical day as a university student and content creator!",
+      "imageUrl": "https://i.postimg.cc/rFmmVVn5/O5b-Yu-Mn-Avz8-HD-1.jpg",
+      "videoUrl": "https://youtu.be/O5bYuMnAvz8?si=U4jl3dd3cPb5kFr5",
+      "category": "Lifestyle",
+      "createdAt": "2025-01-01T00:00:00.000Z",
+      "updatedAt": "2025-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "lv2",
+      "title": "My Cozy Organization Hacks",
+      "description": "Get inspired with my desk look and how I keep things tidy and aesthetic.",
+      "imageUrl": "https://i.postimg.cc/NfpHDCVk/Nw9lxtye3hs-HD.jpg",
+      "videoUrl": "https://youtu.be/Nw9lxtye3hs?si=doR0XaKg4Yf5jV6F",
+      "category": "Lifestyle",
+      "createdAt": "2025-01-02T00:00:00.000Z",
+      "updatedAt": "2025-01-02T00:00:00.000Z"
+    },
+    {
+      "id": "lv3",
+      "title": "Festival in my town",
+      "description": "Exploring a decent restaurant and sharing our culture.",
+      "imageUrl": "https://i.postimg.cc/L5R0g3hb/Mz-WLDr-ZB24-A-HD.jpg",
+      "videoUrl": "https://youtu.be/MzWLDrZB24A?si=SYRMzmTDjbfb_3V5",
+      "category": "Lifestyle",
+      "createdAt": "2025-01-03T00:00:00.000Z",
+      "updatedAt": "2025-01-03T00:00:00.000Z"
+    },
+    {
+      "id": "lv4",
+      "title": "Last day at hostel🎀",
+      "description": "Aesthetic vlog Bangladeshi🇧🇩📦Organize, movie night🍿Enjoying little things✨",
+      "imageUrl": "https://i.postimg.cc/NfNQ6pmT/m-Bk-Kw6-Ur-N9s-HD.jpg",
+      "videoUrl": "https://youtu.be/mBkKw6UrN9s?si=Jg3wIYAHLNnJdUEX",
+      "category": "Lifestyle",
+      "createdAt": "2025-01-04T00:00:00.000Z",
+      "updatedAt": "2025-01-04T00:00:00.000Z"
+    },
+    {
+      "id": "sc1",
+      "title": "📚HSC 2024 Study Tips＋Routine",
+      "description": "⏰How to get A+🥇3 Months Full Preparation📝",
+      "imageUrl": "https://i.postimg.cc/XqpQTj1n/CHv-Huh5-UK9-U-HD.jpg",
+      "videoUrl": "https://youtu.be/CHvHuh5UK9U?si=aPceNY2ichaQq4Dz",
+      "category": "Study",
+      "createdAt": "2025-01-05T00:00:00.000Z",
+      "updatedAt": "2025-01-05T00:00:00.000Z"
+    },
+    {
+      "id": "sc2",
+      "title": "48 hour STUDY VLOG",
+      "description": "Realistic routine Bangladeshi Exam preparation, coffee, unboxing🎀 Study motivation☕️",
+      "imageUrl": "https://i.postimg.cc/3JxtMRGm/v-Ry-Hk-Nm-X30k-HD.jpg",
+      "videoUrl": "https://youtu.be/vRyHkNmX30k?si=mOvOAHfbepF3afDk",
+      "category": "Study",
+      "createdAt": "2025-01-06T00:00:00.000Z",
+      "updatedAt": "2025-01-06T00:00:00.000Z"
+    },
+    {
+      "id": "sc3",
+      "title": "Late night study vlog🌙📚",
+      "description": "Aesthetic vlog Bangladesh,Pulling an all nighter 🎀Cozy night routine🌟",
+      "imageUrl": "https://i.postimg.cc/LshHyS83/g-Wol5n-DSHSc-HD.jpg",
+      "videoUrl": "https://youtu.be/gWol5nDSHSc?si=X-1_BgN7jSqRTGLT",
+      "category": "Study",
+      "createdAt": "2025-01-07T00:00:00.000Z",
+      "updatedAt": "2025-01-07T00:00:00.000Z"
+    },
+    {
+      "id": "sc4",
+      "title": "4 AM morning STUDY VLOG 📚",
+      "description": "Realistic morning routine🎀,Slow mornings,soft music and self-love ☕🪞",
+      "imageUrl": "https://i.postimg.cc/qRf98HhR/svkkf-Y5h4-M8-HD.jpg",
+      "videoUrl": "https://youtu.be/svkkfY5h4M8?si=6uFdDYyk5xpSodjX",
+      "category": "Study",
+      "createdAt": "2025-01-08T00:00:00.000Z",
+      "updatedAt": "2025-01-08T00:00:00.000Z"
+    },
+    {
+      "id": "ugc1",
+      "title": "Collab Example: Manifested Magic with Divoom 💫",
+      "description": "Divoom Ditoo Pro — Retro pixel display, RGB keys, 15W audio, and smart features in one compact speaker.| Divoom x Rupanta’s Diary",
+      "imageUrl": "https://i.postimg.cc/tCTBnwVK/Screenshot-2025-08-08-193307.png",
+      "videoUrl": "https://www.instagram.com/reel/DMfgxu0Tpir/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      "category": "UGC",
+      "createdAt": "2025-01-09T00:00:00.000Z",
+      "updatedAt": "2025-01-09T00:00:00.000Z"
+    },
+    {
+      "id": "ugc2",
+      "title": "Collab Example:✨ Desk Glow-Up with Indecor BD ✨",
+      "description": "Use my code RUPANTA10 for 10% OFF your own pegboard! 🫶🏼",
+      "imageUrl": "https://i.postimg.cc/VLQv28wW/Screenshot-2025-10-04-025751.png",
+      "videoUrl": "https://www.instagram.com/reel/DPWFbf7E8-u/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      "category": "UGC",
+      "createdAt": "2025-01-10T00:00:00.000Z",
+      "updatedAt": "2025-01-10T00:00:00.000Z"
+    },
+    {
+      "id": "ugc3",
+      "title": "Collab Example: Dive in caffeine with BongBeanCoffee",
+      "description": "The perfect brew to keep your mind sharp and heart cozy | BongBean x Rupanta’s Diary",
+      "imageUrl": "https://i.postimg.cc/2jWDZLZc/Screenshot-2025-10-04-022232.png",
+      "videoUrl": "https://youtube.com/shorts/cSkxOxD7-AQ?si=wJwsjBUYRUJLoyV1",
+      "category": "UGC",
+      "createdAt": "2025-01-11T00:00:00.000Z",
+      "updatedAt": "2025-01-11T00:00:00.000Z"
+    }
+  ]
+}
+
+
