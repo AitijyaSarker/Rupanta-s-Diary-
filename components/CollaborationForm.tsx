@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { CollaborationFormData } from '../types';
 import { CONTACT_EMAIL, CREATOR_NAME } from '../constants';
 import SectionTitle from './SectionTitle';
-import { SendIcon } from './icons/GenericIcons';
+import { SendIcon, CheckIcon } from './icons/GenericIcons';
 
 // Declare emailjs if using global script
 declare var emailjs: any;
@@ -82,6 +82,19 @@ const CollaborationForm: React.FC = () => {
           title="Let's Collaborate!"
           subtitle="Interested in working together? Send me a message!"
         />
+
+        {/* Highlighting Component */}
+        <div className="max-w-md mx-auto mb-8 bg-gradient-to-r from-pink-100 to-purple-100 dark:from-pink-900 dark:to-purple-900 p-6 rounded-xl shadow-lg border border-pink-200 dark:border-pink-700">
+          <div className="flex items-center justify-center space-x-3">
+            <CheckIcon className="w-6 h-6 text-green-600 dark:text-green-400" />
+            <span className="text-lg font-semibold text-slate-800 dark:text-slate-200">
+              Worked with 30+ brands
+            </span>
+          </div>
+          <p className="text-center text-sm text-slate-600 dark:text-slate-400 mt-2">
+            Trusted by leading brands for creative collaborations
+          </p>
+        </div>
 
         <div className="max-w-2xl mx-auto bg-pink-50 dark:bg-slate-700 p-8 rounded-xl shadow-xl border border-pink-200 dark:border-slate-600">
           {submitStatus === 'success' && (

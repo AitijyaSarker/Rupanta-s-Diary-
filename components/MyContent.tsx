@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { CONTENT_CATEGORIES } from '../constants';
 import SectionTitle from './SectionTitle';
+import AdminPanel from './AdminPanel';
 
 const MyContent: React.FC = () => {
   const { pathname } = useLocation();
@@ -34,6 +35,8 @@ const MyContent: React.FC = () => {
           title="My Content"
           subtitle="Explore my vlogs, study tips & UGC portfolio"
         />
+
+        <AdminPanel />
 
         <div className="mb-8 md:mb-12 flex flex-wrap justify-center gap-2 md:gap-4 border-b-2 border-pink-200 dark:border-slate-700 pb-4">
           {CONTENT_CATEGORIES.map((category) => (

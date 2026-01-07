@@ -1,5 +1,5 @@
 // App.tsx
-import React, { useState, useEffect, createContext } from 'react';
+import React, { useState, useEffect, createContext, useRef } from 'react';
 import { Routes, Route, useLocation, Link } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Banner from './components/Banner';
@@ -18,18 +18,21 @@ import { Theme } from './types';
 interface ThemeContextType {
   theme: Theme;
   toggleTheme: () => void;
+  isPlaying: boolean;
+  toggleMusic: () => void;
 }
 export const ThemeContext = createContext<ThemeContextType | null>(null);
 
 const App: React.FC = () => {
   const location = useLocation();
 
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window !== 'undefined') {
-      if (
-        localStorage.theme === 'dark' ||
-        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-      ) {
+      const stored = localStorage.getItem('theme');
+      if (stored === 'dark') {
         return Theme.DARK;
       }
     }
@@ -46,8 +49,57 @@ const App: React.FC = () => {
     }
   }, [theme]);
 
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (audio) {
+      const handlePlay = () => setIsPlaying(true);
+      const handlePause = () => setIsPlaying(false);
+
+      audio.addEventListener('play', handlePlay);
+      audio.addEventListener('pause', handlePause);
+
+      // Start music on first user interaction
+      const startMusicOnInteraction = async () => {
+        try {
+          await audio.play();
+          setIsPlaying(true);
+          // Remove listeners after successful play
+          document.removeEventListener('click', startMusicOnInteraction);
+          document.removeEventListener('keydown', startMusicOnInteraction);
+          document.removeEventListener('touchstart', startMusicOnInteraction);
+        } catch (error) {
+          console.log('Music play failed:', error);
+        }
+      };
+
+      // Add listeners for user interaction
+      document.addEventListener('click', startMusicOnInteraction);
+      document.addEventListener('keydown', startMusicOnInteraction);
+      document.addEventListener('touchstart', startMusicOnInteraction);
+
+      return () => {
+        audio.removeEventListener('play', handlePlay);
+        audio.removeEventListener('pause', handlePause);
+        document.removeEventListener('click', startMusicOnInteraction);
+        document.removeEventListener('keydown', startMusicOnInteraction);
+        document.removeEventListener('touchstart', startMusicOnInteraction);
+      };
+    }
+  }, []);
+
   const toggleTheme = () => {
     setTheme((prev) => (prev === Theme.LIGHT ? Theme.DARK : Theme.LIGHT));
+  };
+
+  const toggleMusic = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
   };
 
   // Scroll handler for hash + tab changes
@@ -115,7 +167,7 @@ const App: React.FC = () => {
   );
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme, isPlaying, toggleMusic }}>
       <div className="flex flex-col min-h-screen bg-secondary-light dark:bg-slate-900 text-slate-800 dark:text-slate-200 transition-colors duration-300">
         <Navbar />
         <MarqueeBanner />
@@ -131,6 +183,7 @@ const App: React.FC = () => {
           </Routes>
         </main>
         <Footer />
+        <audio ref={audioRef} src="/[no copyright music] 'Purple' lofi background music.mp3" loop />
       </div>
     </ThemeContext.Provider>
   );

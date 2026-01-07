@@ -2,7 +2,7 @@
 import React, { useState, useContext } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { NAV_ITEMS, CHANNEL_NAME, SOCIAL_LINKS, CONTENT_CATEGORIES } from '../constants';
-import { MenuIcon, CloseIcon } from './icons/GenericIcons';
+import { MenuIcon, CloseIcon, VolumeUpIcon, VolumeOffIcon } from './icons/GenericIcons';
 import { SunIcon, MoonIcon } from './icons/ThemeIcons';
 import { SocialLink, Theme } from '../types';
 import { ThemeContext } from '../App';
@@ -18,10 +18,13 @@ const Navbar: React.FC = () => {
     return null;
   }
   
-  const { theme, toggleTheme } = themeContext;
+  const { theme, toggleTheme, isPlaying, toggleMusic } = themeContext;
   const isDarkMode = theme === Theme.DARK;
 
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
+  const triggerOwnerLogin = () => {
+    window.dispatchEvent(new Event('open-owner-login'));
+  };
 
   const navLinkBaseClasses = "px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 block md:inline-block text-center md:text-left";
   const navLinkActiveClasses = "bg-primary text-white dark:bg-pink-500 dark:text-slate-900";
@@ -57,7 +60,16 @@ const Navbar: React.FC = () => {
              <img
               src="https://i.postimg.cc/8CmByTSM/Whats-App-Image-2025-06-14-at-23-56-59-e72231b3.jpg"
               alt="Profile"
-              className="w-10 h-10 rounded-full object-cover border-2 border-primary-light"
+              className="w-10 h-10 rounded-full object-cover border-2 border-primary-light cursor-pointer"
+              role="button"
+              tabIndex={0}
+              onClick={triggerOwnerLogin}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  triggerOwnerLogin();
+                }
+              }}
             />
             <Link to="/" onClick={closeMobileMenu} className="flex-shrink-0 text-2xl font-display font-bold text-primary dark:text-pink-400">
               {CHANNEL_NAME}
@@ -82,6 +94,13 @@ const Navbar: React.FC = () => {
             >
               {isDarkMode ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
             </button>
+            <button
+              onClick={toggleMusic}
+              className="ml-2 p-2 rounded-full text-slate-600 dark:text-slate-300 hover:bg-pink-100 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-pink-500 transition-colors duration-200"
+              aria-label={isPlaying ? 'Pause music' : 'Play music'}
+            >
+              {isPlaying ? <VolumeUpIcon className="h-5 w-5" /> : <VolumeOffIcon className="h-5 w-5" />}
+            </button>
             <div className="flex space-x-2 pl-1">
               {SOCIAL_LINKS.slice(0, 2).map((social) => ( 
                 <a
@@ -104,6 +123,13 @@ const Navbar: React.FC = () => {
               aria-label="Toggle theme"
             >
               {isDarkMode ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
+            </button>
+            <button
+              onClick={toggleMusic}
+              className="ml-2 p-2 rounded-full hover:bg-pink-100 dark:hover:bg-slate-600 text-slate-600 dark:text-slate-300"
+              aria-label={isPlaying ? 'Pause music' : 'Play music'}
+            >
+              {isPlaying ? <VolumeUpIcon className="h-5 w-5" /> : <VolumeOffIcon className="h-5 w-5" />}
             </button>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
