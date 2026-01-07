@@ -32,8 +32,10 @@ export default async function handler(req, res) {
   }
 
   try {
-    console.log('About to compare password with bcrypt');
-    const isValid = await bcrypt.compare(password, ADMIN_PASSWORD_HASH);
+    // Temporary: use hardcoded hash for testing
+    const hardcodedHash = '$2a$12$dlhyUbUJyOemXxM0ygcaZOFrdFACOWrtBQOCfuJcglJzcnhzWf7iW';
+    console.log('About to compare password with hardcoded hash');
+    const isValid = await bcrypt.compare(password, hardcodedHash);
     console.log('Password validation result:', isValid);
 
     if (!isValid) {

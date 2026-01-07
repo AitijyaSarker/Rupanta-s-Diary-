@@ -4,7 +4,7 @@ import bcrypt from 'bcryptjs';
 const password = process.argv[2];
 
 if (!password) {
-  console.error('Usage: node server/scripts/hashPassword.js "mydiary@16"');
+  console.error('Usage: node server/scripts/hashPassword.js "@mydiary16"');
   process.exit(1);
 }
 
