@@ -1,37 +1,91 @@
-# Secure content backend + admin panel
+# 🎬 Rupanta's Diary - UGC Portfolio
 
-This project now includes a secure Node/Express backend with an owner-only admin panel that lives inside the `My Content` portal. All content (thumbnail, title, description, link) is stored in `server/data/content.json` and exposed through protected APIs.
+A modern, interactive portfolio website showcasing Rupanta Mazumder Kona's journey as a content creator, university student, and UGC (User-Generated Content) creator. Built with React, featuring background music, responsive design, and an engaging user experience.
 
-## Prerequisites
-- Node.js 18+
+![Portfolio Preview](https://via.placeholder.com/800x400/1a1a2e/ffffff?text=Rupanta%27s+Diary+-+Portfolio)
 
-## Setup
-1. Install dependencies  
-   `npm install`
-2. Create backend env vars from the template  
-   Copy `server/env.example` to `server/.env` and fill in:
-   - `ADMIN_EMAIL` / `ADMIN_NAME` for Rupanta
-   - `ADMIN_PASSWORD_HASH` generated via:  
-     `node server/scripts/hashPassword.js "your-strong-password"`
-   - `JWT_SECRET` any long random string
-3. Start the backend (port 5000 by default)  
-   `npm run server`
-4. In another terminal, start the frontend  
-   `npm run dev`
+## ✨ Features
 
-You can also run both with `npm run dev:full` (requires a shell that supports that script).
+### 🎨 **Modern UI/UX**
+- Responsive design that works on all devices
+- Dark/light theme toggle
+- Smooth animations and transitions
+- Interactive components with hover effects
 
-## Admin flow (owner only)
-- Open the site and go to **My Content**.
-- Use the Owner Login card to sign in (email + password that match the env hash).
-- Create, edit, or delete content directly in the portal. Thumbnail uploads are saved under `server/uploads` and served via `/uploads/*`.
-- Public content grids update immediately after CRUD operations.
+### 🎵 **Background Music**
+- Lo-fi background music with play/pause controls
+- Volume control and music player UI
+- Seamless audio experience
 
-## API routes
-- `POST /api/auth/login` — set secure session cookie
-- `POST /api/auth/logout`
-- `GET /api/auth/me` — session check
-- `GET /api/content` — public content list
-- `POST /api/content` — create (auth)
-- `PUT /api/content/:id` — update (auth)
-- `DELETE /api/content/:id` — delete (auth)
+### 📱 **Content Showcase**
+- Dynamic content grids for different categories
+- Video content integration (YouTube, etc.)
+- Image galleries and thumbnails
+- Real-time content browsing
+
+### 🚀 **Performance Optimized**
+- Built with Vite for fast loading
+- Optimized images and assets
+- Fast loading times
+- Mobile-friendly design
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **React 18** - Modern React with hooks
+- **Vite** - Fast build tool and dev server
+- **TypeScript** - Type-safe development
+- **Tailwind CSS** - Utility-first CSS framework
+- **React Router** - Client-side routing
+
+## 📋 Prerequisites
+
+- Modern web browser (Chrome, Firefox, Safari, Edge)
+- Internet connection for video content
+
+## 🌐 Live Demo
+
+Visit the live portfolio: **[https://rupantas-diary-portfolio.vercel.app](https://rupantas-diary-portfolio.vercel.app)**
+
+## 🎯 How to Use
+
+### For Visitors
+1. **Browse Content** - Explore different categories of content
+2. **Watch Videos** - Click on video thumbnails to watch content
+3. **Enjoy Music** - Use the music controls in the header
+4. **Toggle Theme** - Switch between light and dark modes
+5. **Navigate** - Use the navigation menu to explore sections
+
+### Content Categories
+- **Lifestyle** - Daily vlogs and personal content
+- **Study** - Educational content and study tips
+- **UGC** - User-generated content collaborations
+
+## 🎵 Background Music
+
+The portfolio features original lo-fi background music that enhances the browsing experience. Music controls are available in the header for play/pause and volume adjustment.
+
+## 📱 Responsive Design
+
+The website is fully responsive and optimized for:
+- Desktop computers
+- Tablets
+- Mobile phones
+- Different screen sizes and orientations
+
+## 🚀 Deployment
+
+This portfolio is deployed on **Vercel** for optimal performance and reliability.
+
+## 📞 Contact
+
+**Rupanta Mazumder Kona**
+- Email: rupantasdiary@gmail.com
+- Instagram: [@your-instagram]
+- YouTube: [Your YouTube Channel]
+
+---
+
+⭐ **Star this repo if you found it helpful!**
+
+Made with ❤️ for Rupanta Mazumder Kona
