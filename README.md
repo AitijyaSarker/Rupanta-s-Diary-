@@ -77,12 +77,6 @@ The website is fully responsive and optimized for:
 
 This portfolio is deployed on **Vercel** for optimal performance and reliability.
 
-## 📞 Contact
-
-**Rupanta Mazumder Kona**
-- Email: rupantasdiary@gmail.com
-- Instagram: [@your-instagram]
-- YouTube: [Your YouTube Channel]
 
 ---
 
