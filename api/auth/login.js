@@ -32,33 +32,20 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Temporary test: bypass bcrypt and check plain text
-    const expectedPassword = '@mydiary16';
-    console.log('Password check:', { provided: password, expected: expectedPassword, matches: password === expectedPassword });
-
-    if (password !== expectedPassword) {
-      return res.status(401).json({ message: 'Unauthorized - password mismatch' });
-    }
-
-    // If plain text works, then uncomment bcrypt code below
-    /*
-    const bcrypt = await import('bcryptjs');
-    console.log('About to compare password');
-    const isValid = await bcrypt.default.compare(password, process.env.ADMIN_PASSWORD_HASH);
+    console.log('About to compare password with bcrypt');
+    const isValid = await bcrypt.compare(password, ADMIN_PASSWORD_HASH);
     console.log('Password validation result:', isValid);
 
     if (!isValid) {
       console.log('Password invalid');
       return res.status(401).json({ message: 'Unauthorized - invalid password' });
     }
-    */
 
-    const jwt = await import('jsonwebtoken');
-    const token = jwt.default.sign({ email, name: process.env.ADMIN_NAME }, process.env.JWT_SECRET, { expiresIn: '12h' });
+    const token = jwt.sign({ email, name: ADMIN_NAME }, JWT_SECRET, { expiresIn: '12h' });
 
     res.setHeader('Set-Cookie', `admin_token=${token}; HttpOnly; Path=/; Max-Age=${60 * 60 * 12}; SameSite=Lax`);
 
-    res.json({ user: { email, name: process.env.ADMIN_NAME } });
+    res.json({ user: { email, name: ADMIN_NAME } });
   } catch (error) {
     console.error('Login error:', error);
     return res.status(500).json({ message: 'Internal server error', error: error.message });
