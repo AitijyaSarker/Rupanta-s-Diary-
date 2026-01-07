@@ -265,7 +265,18 @@ app.use((err, req, res, next) => {
   return res.status(500).json({ message: 'Internal server error' });
 });
 
+// Serve frontend build if available (single deploy for full-stack)
+const CLIENT_DIST = path.join(__dirname, '..', 'dist');
+if (fs.existsSync(CLIENT_DIST)) {
+  app.use(express.static(CLIENT_DIST));
+
+  // SPA fallback
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(CLIENT_DIST, 'index.html'));
+  });
+}
+
 app.listen(PORT, () => {
-  console.log(`Secure content backend running on http://localhost:${PORT}`);
+  console.log(`Secure content backend running on port ${PORT}`);
 });
 
