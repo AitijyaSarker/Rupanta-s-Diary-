@@ -7,28 +7,47 @@ const ADMIN_PASSWORD_HASH = process.env.ADMIN_PASSWORD_HASH;
 const JWT_SECRET = process.env.JWT_SECRET;
 
 export default async function handler(req, res) {
+  console.log('Login attempt:', { method: req.method, hasBody: !!req.body });
+
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
   const { email, password } = req.body || {};
+  console.log('Login data:', { email: email ? 'provided' : 'missing', password: password ? 'provided' : 'missing' });
 
   if (!email || !password) {
     return res.status(400).json({ message: 'Email and password are required' });
   }
 
-  if (email.toLowerCase().trim() !== ADMIN_EMAIL.toLowerCase().trim()) {
+  console.log('Env vars check:', {
+    ADMIN_EMAIL: process.env.ADMIN_EMAIL ? 'set' : 'missing',
+    ADMIN_PASSWORD_HASH: process.env.ADMIN_PASSWORD_HASH ? 'set' : 'missing',
+    JWT_SECRET: process.env.JWT_SECRET ? 'set' : 'missing'
+  });
+
+  if (email.toLowerCase().trim() !== process.env.ADMIN_EMAIL.toLowerCase().trim()) {
+    console.log('Email mismatch');
     return res.status(401).json({ message: 'Unauthorized' });
   }
 
-  const isValid = await bcrypt.compare(password, ADMIN_PASSWORD_HASH);
-  if (!isValid) {
-    return res.status(401).json({ message: 'Unauthorized' });
+  try {
+    const bcrypt = await import('bcryptjs');
+    const isValid = await bcrypt.default.compare(password, process.env.ADMIN_PASSWORD_HASH);
+    console.log('Password validation result:', isValid);
+
+    if (!isValid) {
+      return res.status(401).json({ message: 'Unauthorized' });
+    }
+
+    const jwt = await import('jsonwebtoken');
+    const token = jwt.default.sign({ email, name: process.env.ADMIN_NAME }, process.env.JWT_SECRET, { expiresIn: '12h' });
+
+    res.setHeader('Set-Cookie', `admin_token=${token}; HttpOnly; Path=/; Max-Age=${60 * 60 * 12}; SameSite=Lax`);
+
+    res.json({ user: { email, name: process.env.ADMIN_NAME } });
+  } catch (error) {
+    console.error('Login error:', error);
+    return res.status(500).json({ message: 'Internal server error', error: error.message });
   }
-
-  const token = jwt.sign({ email, name: ADMIN_NAME }, JWT_SECRET, { expiresIn: '12h' });
-
-  res.setHeader('Set-Cookie', `admin_token=${token}; HttpOnly; Path=/; Max-Age=${60 * 60 * 12}; SameSite=Lax`);
-
-  res.json({ user: { email, name: ADMIN_NAME } });
 }
