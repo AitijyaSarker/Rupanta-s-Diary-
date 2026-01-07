@@ -32,6 +32,16 @@ export default async function handler(req, res) {
   }
 
   try {
+    // Temporary test: bypass bcrypt and check plain text
+    const expectedPassword = '@mydiary16';
+    console.log('Password check:', { provided: password, expected: expectedPassword, matches: password === expectedPassword });
+
+    if (password !== expectedPassword) {
+      return res.status(401).json({ message: 'Unauthorized - password mismatch' });
+    }
+
+    // If plain text works, then uncomment bcrypt code below
+    /*
     const bcrypt = await import('bcryptjs');
     console.log('About to compare password');
     const isValid = await bcrypt.default.compare(password, process.env.ADMIN_PASSWORD_HASH);
@@ -41,6 +51,7 @@ export default async function handler(req, res) {
       console.log('Password invalid');
       return res.status(401).json({ message: 'Unauthorized - invalid password' });
     }
+    */
 
     const jwt = await import('jsonwebtoken');
     const token = jwt.default.sign({ email, name: process.env.ADMIN_NAME }, process.env.JWT_SECRET, { expiresIn: '12h' });
