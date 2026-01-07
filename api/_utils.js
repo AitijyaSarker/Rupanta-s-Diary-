@@ -17,7 +17,7 @@ if (!ADMIN_EMAIL || !ADMIN_PASSWORD_HASH || !JWT_SECRET) {
   throw new Error('Missing required env vars: ADMIN_EMAIL, ADMIN_PASSWORD_HASH, JWT_SECRET');
 }
 
-const DATA_PATH = path.join(__dirname, 'content.json');
+const DATA_PATH = path.join(__dirname, 'content-data.json');
 
 export const readContent = () => {
   try {
