@@ -21,23 +21,25 @@ export default async function handler(req, res) {
   }
 
   console.log('Env vars check:', {
-    ADMIN_EMAIL: process.env.ADMIN_EMAIL ? 'set' : 'missing',
+    ADMIN_EMAIL: process.env.ADMIN_EMAIL,
     ADMIN_PASSWORD_HASH: process.env.ADMIN_PASSWORD_HASH ? 'set' : 'missing',
     JWT_SECRET: process.env.JWT_SECRET ? 'set' : 'missing'
   });
 
   if (email.toLowerCase().trim() !== process.env.ADMIN_EMAIL.toLowerCase().trim()) {
-    console.log('Email mismatch');
-    return res.status(401).json({ message: 'Unauthorized' });
+    console.log('Email mismatch:', { provided: email.toLowerCase().trim(), expected: process.env.ADMIN_EMAIL.toLowerCase().trim() });
+    return res.status(401).json({ message: 'Unauthorized - email mismatch' });
   }
 
   try {
     const bcrypt = await import('bcryptjs');
+    console.log('About to compare password');
     const isValid = await bcrypt.default.compare(password, process.env.ADMIN_PASSWORD_HASH);
     console.log('Password validation result:', isValid);
 
     if (!isValid) {
-      return res.status(401).json({ message: 'Unauthorized' });
+      console.log('Password invalid');
+      return res.status(401).json({ message: 'Unauthorized - invalid password' });
     }
 
     const jwt = await import('jsonwebtoken');
